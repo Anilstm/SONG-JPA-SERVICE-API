@@ -1,12 +1,14 @@
 package com.example.song.model;
 import javax.persistence.*;
+
+
 @Entity
 @Table(name="playlist")
 public class Song{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "songid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int songId;
 
     @Column(name = "songname")
@@ -21,7 +23,7 @@ public class Song{
     @Column(name = "musicdirector")
     private String musicDirector;
 
-     Song(int songId,String songName,String lyricist,String singer,String musicDirector){
+    public Song(int songId,String songName,String lyricist,String singer,String musicDirector){
         this.songId=songId;
         this.songName=songName;
         this.lyricist=lyricist;

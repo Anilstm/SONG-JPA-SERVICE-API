@@ -7,6 +7,7 @@ import java.util.*;
 import com.example.song.model.Song;
 import com.example.song.repository.SongJpaRepository;
 import com.example.song.repository.SongRepository;
+
 @Service
 public class SongJpaService implements SongRepository{
     @Autowired
@@ -23,14 +24,13 @@ public class SongJpaService implements SongRepository{
         try{
             Song song=songJpaRepository.findById(songId).get();
             return song;
-        }
-        catch(Exception e){
+        }catch(Exception e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
         
     }
     @Override
-    public song addSong(Song song){
+    public Song addSong(Song song){
         songJpaRepository.save(song);
         return song;
     }
@@ -45,16 +45,15 @@ public class SongJpaService implements SongRepository{
             if(song.getLyricist()!=null){
                 newSong.setLyricist(song.getLyricist());
             }
-            if(song.getSinger()!=null){
-                newSong.setSinger(song.getSinger());
-            }
-            }
             if(song.getMusicDirector()!=null){
                 newSong.setMusicDirector(song.getMusicDirector());
             }
+            if(song.getSinger()!=null){
+                newSong.setSinger(song.getSinger());
+            }
             songJpaRepository.save(newSong);
-        }
-        catch(Exception e){
+            return newSong;
+        }catch (Exception e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
     }
