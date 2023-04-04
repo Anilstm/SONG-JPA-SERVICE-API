@@ -1,4 +1,4 @@
-Given five files,
+Containsfive files,
 
 - `SongController.java` 
 - `SongRepository.java`
@@ -6,7 +6,7 @@ Given five files,
 - `SongJpaRepository.java`
 - `Song.java`
 
-And also given a database file `songs` which contains `playlist` table.
+Contains a database file `songs` which contains `playlist` table.
 
 #### PLAYLIST table
 
@@ -18,14 +18,8 @@ And also given a database file `songs` which contains `playlist` table.
 |    singer     |  TEXT   |
 | musicDirector |  TEXT   |
 
-<MultiLineNote>
 
-    Use only `playlist` as a table name in your code while writing queries and while using in model class.
-</MultiLineNote>
-
-### Completion Instructions
-
-- `Song.java`: The `Song` class should contain the following attributes.
+- `Song.java`: The `Song` class contains the following attributes.
 
   |   Attribute   |  Type  |
   | :-----------: | :----: |
@@ -35,10 +29,10 @@ And also given a database file `songs` which contains `playlist` table.
   |    singer     | String |
   | musicDirector | String |
 
-- `SongRepository.java`: Create an interface containing required methods.
-- `SongJpaService.java`: Update the service class with logic for managing song data.
-- `SongController`: Create the controller class to handle HTTP requests.
-- `SongJpaRepository.java`: Create an interface which implements the `JpaRepository` interface.
+- `SongRepository.java`: Creates an interface containing required methods.
+- `SongJpaService.java`: Updates the service class with logic for managing song data.
+- `SongController`: Creates the controller class to handle HTTP requests.
+- `SongJpaRepository.java`: Creates an interface which implements the `JpaRepository` interface.
 
 Implement the following APIs.
 
@@ -164,9 +158,3 @@ If the given `songId` is not found in the `playlist`, raise `ResponseStatusExcep
 #### Description:
 
 Deletes a song from the `playlist`  based on the `songId`. If the given `songId` is not found in the `playlist`, raise `ResponseStatusException` with `HttpStatus.NOT_FOUND`.
-
-**Do not modify the code in the `SongApplication.java`.**
-
-**Do not  modify anything in the `application.properties` file**
-
-**Do not add any Sql files**
