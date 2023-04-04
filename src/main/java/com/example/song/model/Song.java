@@ -23,6 +23,10 @@ public class Song{
     @Column(name = "musicdirector")
     private String musicDirector;
 
+    public Song(){ //implement this line in your code
+        
+    }
+
     public Song(int songId,String songName,String lyricist,String singer,String musicDirector){
         this.songId=songId;
         this.songName=songName;
